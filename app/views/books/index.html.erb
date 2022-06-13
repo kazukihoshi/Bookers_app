@@ -1,0 +1,36 @@
+<p id ="notice"></p>
+<h1>Books</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan ="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% @books.each do |book| %>
+    <tr>
+      <td>
+        <span><%= book.title %></span>
+      </td>
+      <td>
+        <span><%= book.body %></span>
+      </td>
+      <td>
+        <%= link_to "top", top_path %>
+      </td>
+      <td>
+        <%= link_to "Top", top_path %>
+      </td>
+      <td>
+        <%= link_to "Top", top_path %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+</div>
+
+
