@@ -7,6 +7,13 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
     book.save
     redirect_to '/top'
+    @message = @book.messages.new(message_params)
+    if @message.save
+      redirect_to book_messages_path(@book), notice: 'book was successfully created.'
+    else
+      flsh.now[:alert] = 'メッセージを入力してください'
+      render :index
+    end
   end
 
   def index
@@ -25,6 +32,12 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
+  end
+  
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
   end
   
   private
