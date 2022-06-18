@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <div class="flash-notifications">
+      <%= flash[:success] %>
+    </div>
     <%= yield %>
   </body>
 </html>
