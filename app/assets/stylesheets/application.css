@@ -86,3 +86,7 @@ label {
   background-color: red;
   display: table;
 }
+
+.flash-notifications {
+  color: green;
+}
